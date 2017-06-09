@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.tab{
+				width: 500px;
+				margin: 50px auto;
+			}
+			.tab p{
+				display: flex;
+				border: 1px solid #000000;
+			}
+			.tab span{
+				display: block;
+				flex: 1;
+				line-height: 30px;
+				text-align: center;
+			}
+			.tab div{
+				height: 300px;
+				border: 1px solid #000000;
+				text-align: center;
+				line-height: 300px;
+				display: none;
+			}
+			.tou{
+				background: red;
+			}
+			#cang{
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oSpan=document.getElementsByTagName("span");
+				var oTab=document.getElementsByClassName("tab")[0];
+				var oDiv=oTab.getElementsByTagName("div");
+				for(var i=0;i<oSpan.length;i++){
+					oSpan[i].index=i;
+					oSpan[i].onclick=function(){
+						for(var x=0;x<oSpan.length;x++){
+							oSpan[x].setAttribute("class","");
+							oDiv[x].setAttribute("id","")
+						}
+						this.setAttribute("class","tou")
+						oDiv[this.index].setAttribute("id","cang")
+					}
+				};
+				
+			};
+		</script>
+	</head>
+	<body>
+		<div class="tab">
+			<p>
+				<span class="tou">1</span>
+				<span>2</span>
+				<span>3</span>
+			</p>
+			<div id="cang">A</div>
+			<div>B</div>
+			<div>C</div>
+		</div>
+			
+	</body>
+</html>
