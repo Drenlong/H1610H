@@ -36,6 +36,25 @@
 				display: block;
 			}
 		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oSpan=document.getElementsByTagName("span");
+				var oTab=document.getElementsByClassName("tab")[0];
+				var oDiv=oTab.getElementsByTagName("div");
+				for(var i=0;i<oSpan.length;i++){
+					oSpan[i].index=i;
+					oSpan[i].onclick=function(){
+						for(var x=0;x<oSpan.length;x++){
+							oSpan[x].setAttribute("class","");
+							oDiv[x].setAttribute("id","")
+						}
+						this.setAttribute("class","tou")
+						oDiv[this.index].setAttribute("id","cang")
+					}
+				};
+				
+			};
+		</script>
 	</head>
 	<body>
 		<div class="tab">
